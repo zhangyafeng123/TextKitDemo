@@ -12,6 +12,7 @@
 		BA485A1021396B6000F05576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA485A0E21396B6000F05576 /* Main.storyboard */; };
 		BA485A1221396B6400F05576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA485A1121396B6400F05576 /* Assets.xcassets */; };
 		BA485A1521396B6400F05576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA485A1321396B6400F05576 /* LaunchScreen.storyboard */; };
+		BA485A1D21396BCA00F05576 /* ZYFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA485A1C21396BCA00F05576 /* ZYFLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BA485A1121396B6400F05576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA485A1421396B6400F05576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA485A1621396B6400F05576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA485A1C21396BCA00F05576 /* ZYFLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYFLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				BA485A0A21396B6000F05576 /* AppDelegate.swift */,
 				BA485A0C21396B6000F05576 /* ViewController.swift */,
+				BA485A1C21396BCA00F05576 /* ZYFLabel.swift */,
 				BA485A0E21396B6000F05576 /* Main.storyboard */,
 				BA485A1121396B6400F05576 /* Assets.xcassets */,
 				BA485A1321396B6400F05576 /* LaunchScreen.storyboard */,
@@ -90,6 +93,7 @@
 		BA4859FF21396B6000F05576 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZYF;
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = zhangyafeng;
@@ -135,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA485A1D21396BCA00F05576 /* ZYFLabel.swift in Sources */,
 				BA485A0D21396B6000F05576 /* ViewController.swift in Sources */,
 				BA485A0B21396B6000F05576 /* AppDelegate.swift in Sources */,
 			);
