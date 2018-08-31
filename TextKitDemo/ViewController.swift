@@ -8,12 +8,14 @@
 
 import UIKit
 
+/// TextKit 是在7.0之后才有的
 class ViewController: UIViewController {
     @IBOutlet weak var label: ZYFLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        label.text = "张亚峰 http://www.baidu.com"
     }
 
     override func didReceiveMemoryWarning() {

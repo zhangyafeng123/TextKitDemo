@@ -14,6 +14,14 @@ import UIKit
 /// - UILabel 默认不能实现垂直顶部对齐，使用 TextKit 可以
 class ZYFLabel: UILabel {
     
+    /// 重写属性 - 进一步体会 TextKit 接管底层的实现
+    /// 一旦内容变化， 需要让 textStorage 响应变化
+    override var text: String? {
+        didSet {
+            //重新准备文本内容
+            prepareTextContent()
+        }
+    }
     /// 构造函数
     ///
     /// - Parameter frame: frame
