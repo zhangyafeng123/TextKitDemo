@@ -27,13 +27,16 @@ class ZYFLabel: UILabel {
     }
     
     /// 绘制文本
-    ///
+    /// - 在 iOS 中绘制工作类似于 油画 似的，后绘制的内容，会把之前绘制的内容覆盖!
     /// - Parameter rect: rect
     override func drawText(in rect: CGRect) {
         let range = NSRange(location: 0, length: textStorage.length)
-        
-        // glyphs 字形
+        //绘制背景
+        //layoutManager.drawBackground(forGlyphRange: range, at: CGPoint())
+        // glyphs 绘制 字形
         layoutManager.drawGlyphs(forGlyphRange: range, at: CGPoint())
+        //会覆盖
+        //layoutManager.drawBackground(forGlyphRange: range, at: CGPoint())
     }
     
     override func layoutSubviews() {
@@ -73,9 +76,10 @@ private extension ZYFLabel {
         } else {
             textStorage.setAttributedString(NSAttributedString(string: ""))
         }
-        print(urlRanges)
-        
-        
+        //遍历范围数组，设置 url 文字的属性
+        for r in urlRanges ?? [] {
+            textStorage.addAttributes([NSAttributedStringKey.foregroundColor : UIColor.red, NSAttributedStringKey.backgroundColor: UIColor.green], range: r)
+        }
     }
     
 }
