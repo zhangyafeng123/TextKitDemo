@@ -25,6 +25,29 @@ class ZYFLabel: UILabel {
         super.init(coder: aDecoder)
         prepareTextSystem()
     }
+    // 交互
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //1.获取用户点击的位置
+        guard let location = touches.first?.location(in: self) else {
+            return
+        }
+       //2.获取当前点中字符的索引
+        let idx = layoutManager.glyphIndex(for: location, in: textContainer)
+        //3.判断 idx 是否在 urls 的 ranges 范围内， 如果在，就高亮显示
+        for r in urlRanges ?? [] {
+            //
+            if NSLocationInRange(idx, r) {
+                print("需要高亮显示")
+                //修改文本的字体属性
+                textStorage.addAttributes([NSAttributedStringKey.foregroundColor : UIColor.blue], range: r)
+                //如果需要重新绘制，需要调用 setNeedsDisplay  函数，但是不是 drawRect
+                setNeedsDisplay()
+            } else {
+                print("没点到这个范围")
+            }
+        }
+        
+    }
     
     /// 绘制文本
     /// - 在 iOS 中绘制工作类似于 油画 似的，后绘制的内容，会把之前绘制的内容覆盖!
@@ -60,6 +83,8 @@ private extension ZYFLabel {
     
     /// 准本文本系统
     func prepareTextSystem()  {
+        //0.开启用户交互
+        isUserInteractionEnabled = true
         //1.准备文本内容
         prepareTextContent()
         //2.设置对象的关系
